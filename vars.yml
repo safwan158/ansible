@@ -13,7 +13,7 @@
         msg: URL = {{URL2}}
     - name : Demo on Task Level vaiables
       vars:
-        URL3 = task.google.com
+             URL3 = task.google.com
       debug:
         msg: URL = {{URL3}}
         
