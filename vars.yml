@@ -27,4 +27,4 @@
       register: output
     - name: Print uptime output
       debug:
-        msg: "{{output}}"
+        msg: "{{output.stdout}}"
