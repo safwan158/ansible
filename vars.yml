@@ -22,3 +22,9 @@
     - name: Print vaiables from the command line
       debug:
         msg: URL = {{URL5}}
+    - name: Run a shell cmd and store output
+      shell: uptime
+      register: output
+    - name: Print uptime output
+      debug:
+        msg: "{{out}}"
