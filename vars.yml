@@ -28,3 +28,9 @@
     - name: Print uptime output
       debug:
         msg: "{{output.stdout}}"
+    - name: Declare a vaiable/facr
+      set_fact:
+        OUTPUT: "{{output.stdout}}"
+    - name: Print OUTPUT variable
+      debug:
+        msg: "{{OUTPUT}}"
