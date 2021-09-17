@@ -2,6 +2,8 @@
   hosts: all 
   vars:
     URL1: play.google.com
+  vars_files:
+    - vars-file.yml
   tasks:
     - name: Print a variable from play
       debug:
