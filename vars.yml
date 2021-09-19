@@ -15,7 +15,7 @@
       vars:
         URL3: task.google.com
       debug:
-        msg: URL = 
+        msg: URL = {{URL3}}
     - name: Print variables from the host file
       debug:
         msg: URL = {{URL4}}
