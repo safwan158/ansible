@@ -2,6 +2,7 @@
   hosts: all 
   vars:
     URL1: play.google.com
+    URL: play.google.com
   vars_files:
     - vars-file.yml
   tasks:
@@ -34,3 +35,6 @@
     - name: Print OUTPUT variable
       debug:
         msg: "{{OUTPUT}}"
+    roles:
+      - sample
+      
