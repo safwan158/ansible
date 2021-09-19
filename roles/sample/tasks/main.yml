@@ -3,4 +3,4 @@
     msg: Hello World from the Roles
 - name: Print URL
   debug:
-    msg: URL={{URL}}
+    msg: URL={{URL7}}
