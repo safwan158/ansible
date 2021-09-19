@@ -35,6 +35,7 @@
     - name: Print OUTPUT variable
       debug:
         msg: "{{OUTPUT}}"
-    roles:
-      - sample
+  roles:
+    - sample
+      
       
