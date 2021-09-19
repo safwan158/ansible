@@ -11,7 +11,7 @@
     - name: Print a variable from file
       debug:
         msg: URL = {{URL2}}
-    - name : Demo on Task Level vaiables
+    - name : Demo on Task Level variables
       vars:
         URL3: task.google.com
       debug:
@@ -19,7 +19,7 @@
     - name: Print variables from the host file
       debug:
         msg: URL = {{URL4}}
-    - name: Print vaiables from the command line
+    - name: Print variables from the command line
       debug:
         msg: URL = {{URL5}}
     - name: Run a shell cmd and store output
@@ -28,7 +28,7 @@
     - name: Print uptime output
       debug:
         msg: "{{output.stdout}}"
-    - name: Declare a vaiable/facr
+    - name: Declare a variable/fact
       set_fact:
         OUTPUT: "{{output.stdout}}"
     - name: Print OUTPUT variable
