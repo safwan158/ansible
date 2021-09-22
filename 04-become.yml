@@ -1,11 +1,14 @@
 - name: Demo on become sudo
   hosts: all 
-  become: yes
+  #become: yes
   tasks:
     - name: Get ID of User
       shell: id
       register: out
+      become: yes
       
     - name: Print 
       debug:
         msg : "{{out}}"
+        
+## become can be used at task level and play level as well
