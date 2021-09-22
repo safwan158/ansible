@@ -64,7 +64,7 @@
 - name: RoboShop Project SetUp - Payment
   hosts: PAYMENT
   tags: payment
-  beccome: yes
+  become: yes
   roles:
     - payment
     
