@@ -1,5 +1,6 @@
 - name: Demo on become sudo
   hosts: all 
+  become: yes
   tasks:
     - name: Get ID of User
       shell: id
