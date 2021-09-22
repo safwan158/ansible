@@ -2,8 +2,20 @@
   yum:
     name: nginx
     state: present
+    
 - name: Download frontend archive
   ansible.builtin.unarchive:
     src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
     dest: /tmp
+    remote_src: yes
+    
+- name: Remove old contents
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+    
+- name: Copy extracted contents to Nginx path
+  ansible.builtin.copy:
+    src: /tmp/frontend-main/static
+    dest: /usr/share/nginx/html
     remote_src: yes
