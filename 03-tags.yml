@@ -11,3 +11,13 @@
         msg: Ubuntu
       tags: 
         - ubuntu
+    - name: Windows
+      debug:  
+        msg: Windows
+      tags:
+        - windows
+    - name: Linux
+      debug:
+        msg: Linux
+      tags:
+        - Linux
