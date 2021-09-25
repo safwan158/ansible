@@ -3,7 +3,7 @@
     src: mysql.repo 
     dest: /etc/yum.repos.d/mysql.repo
     
-- name: Remove Package 
+- name: Remove  mariadb-libs Package 
   yum:
     name: mariadb-libs
     state: absent
@@ -15,7 +15,7 @@
   
 - name: Start MYSQL service
   systemd:
-    name: mysql 
+    name: mysqld 
     state: started
     enabled: yes 
     
