@@ -1,5 +1,5 @@
 - name: Install NodeJS
-   yum:
+  yum:
     name:
       - nodejs
       - make
