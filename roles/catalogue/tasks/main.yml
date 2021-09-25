@@ -26,6 +26,8 @@
     src: /tmp/catalogue-main/
     dest: /home/roboshop/catalogue
     remote_src: yes
+    owner: roboshop
+    group: roboshop
 
 # $ curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
 # $ cd /home/roboshop
