@@ -29,7 +29,7 @@
     dest: /tmp/reset.sql
   
 - name: Reset MYSQL Password
-  shell: mysql --connect-expired-password -u root -p"${DEFAULT_PASSWORD}" </tmp/reset.sql
+  shell: mysql --connect-expired-password -u root -p"${{default_pass}}.stdout" </tmp/reset.sql
   
     
 
