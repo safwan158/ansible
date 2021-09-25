@@ -1,58 +1,38 @@
-- name: Copy MySQL Repo file
-  copy: 
-    src: mysql.repo 
+- name: Copy MySQL Repo
+  copy:
+    src: mysql.repo
     dest: /etc/yum.repos.d/mysql.repo
-    
-- name: Remove  mariadb-libs Package 
+
+- name: Remove mariadb-libs Package
   yum:
     name: mariadb-libs
     state: absent
-    
-- name: Install MySQL Server
+
+- name: Install MySQL Serverr
   yum:
-    name: mysql-community-server
+    name:
+      - mysql-community-server
+      - MySQL-python
     state: present
-  
-- name: Start MYSQL service
+
+- name: Start MySQL Service
   systemd:
-    name: mysqld 
+    name: mysqld
     state: started
-    enabled: yes 
-# - name: Copy MySQL Repo
-#   copy:
-#     src: mysql.repo
-#     dest: /etc/yum.repos.d/mysql.repo
-
-# - name: Remove mariadb-libs Package
-#   yum:
-#     name: mariadb-libs
-#     state: absent
-
-# - name: Install MySQL Serverr
-#   yum:
-#     name:
-#       - mysql-community-server
-#       - MySQL-python
-#     state: present
-
-# - name: Start MySQL Service
-#   systemd:
-#     name: mysqld
-#     state: started
-#     enabled: yes
+    enabled: yes
 
     
-# - name: Grab default password
-#   shell: grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
-#   register: default_pass
+- name: Grab default password
+  shell: grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
+  register: default_pass
   
-# - name: Reset SQL file
-#   copy:
-#     src: reset.sql
-#     dest: /tmp/reset.sql
+- name: Reset SQL file
+  copy:
+    src: reset.sql
+    dest: /tmp/reset.sql
   
-# - name: Reset MYSQL Password
-#   shell: mysql --connect-expired-password -u root -p"${{default_pass}}.stdout" </tmp/reset.sql
+- name: Reset MYSQL Password
+  shell: mysql --connect-expired-password -u root -p"${{default_pass}}.stdout" </tmp/reset.sql
   
     
 # Install MySQL
