@@ -16,9 +16,11 @@
     
     - name: Number Condition - 1
       debug:
-        msg: NUM >= 5
+        msg: Number Condition - 1
+      when : NUM >= 5
         
     - name: Number Condition - 2
       debug:
-        msg : NUM <= 5
+        msg : Number Condition - 2
+      when: NUM <= 5
         
