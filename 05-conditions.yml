@@ -28,6 +28,7 @@
     - name: If Bool1 is true
       debug:
         msg: Bool1 is true
-      when: BOOL1
+      # when: BOOL1
+      when: BOOL1 | bool
       
         
