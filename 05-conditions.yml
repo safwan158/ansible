@@ -3,6 +3,7 @@
   vars: 
     OS: Centos
     NUM: 7
+    BOOL1: true
   tasks:
     - name: Centos
       debug:
@@ -23,4 +24,10 @@
       debug:
         msg : Number Condition - 2
       when: NUM <= 5
+      
+    - name: If Bool1 is true
+      debug:
+        msg: Bool1 is true
+      when: BOOL1
+      
         
