@@ -33,14 +33,17 @@
 - name: Grab default password
   shell: grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
   register: default_pass
+  when: out.rc != 0
   
 - name: Reset SQL file
   copy:
     src: reset.sql
     dest: /tmp/reset.sql
+  when: out.rc != 0
   
 - name: Reset MYSQL Password
   shell: mysql --connect-expired-password -u root -p"${{default_pass.stdout}}" </tmp/reset.sql
+  when: out.rc != 0
   
   
 
