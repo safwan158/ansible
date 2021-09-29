@@ -1,4 +1,4 @@
-- name: SetUp User Service File
+- name: SetUp {{COMPONENT}} Service File
   copy:
     src: systemd.service
     dest: /etc/systemd/system/{{COMPONENT}}.service
