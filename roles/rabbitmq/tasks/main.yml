@@ -9,7 +9,7 @@
 - name: Install RabbitMQ Server
   yum:
     name: rabbitmq.server
-    state: prsent
+    state: present
     
 - name: Start RabbitMQ Service
   yum:
