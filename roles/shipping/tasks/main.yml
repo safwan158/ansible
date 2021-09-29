@@ -1,4 +1,4 @@
 - name: Include Java
-  include_role: 
+  include_role:
     name: common
-    task_from: java
+    tasks_from: java
