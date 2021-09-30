@@ -1,0 +1,25 @@
+- name: Install Python
+  yum:
+    name:
+      - python36
+      - make
+      - gcc-c++
+    state: present
+    
+- name: Download
+  include_tasks: download.yml
+              
+- name: Install Python Dependencies
+  pip:
+    requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
+    executable: pip3.3
+    
+- name: Print User Details
+  debug:
+    msg:"{{ROBOSHOP_USER}}"
+
+# - name: SystemD
+#   include_tasks: systemd.yml
+  
+
+

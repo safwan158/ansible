@@ -1,6 +1,7 @@
 - name: Create RoboShop App {{COMPONENT}} 
   user:
     name: roboshop
+    register: ROBOSHOP_USER
     
 - name: Download {{COMPONENT}} App archive
   ansible.builtin.unarchive:
